@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Value</title>
+  </head>
+  <body>
+    <h1>Update Value</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="key">Select Key:</label>
+      <select name="key">
+        {% for key in data.keys %}
+        <option value="{{ key }}">{{ key }}</option>
+        {% endfor %}</select
+      ><br />
+      <label for="value">New Value:</label>
+      <input type="text" name="value" required /><br />
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>
